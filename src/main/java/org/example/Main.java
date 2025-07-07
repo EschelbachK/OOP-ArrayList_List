@@ -1,17 +1,45 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // ► Schule-Instanz anlegen
+        School schule = new School();
+
+        // ► Studenten anlegen
+        Student student1 = new Student("Frank", "Schmitt", 5);
+        Student student2 = new Student("Jack", "Müller", 3);
+        Student student3 = new Student("Hans", "Meier", 2);
+
+        // ► In die Schule aufnehmen
+        schule.addStudent(student1);
+        schule.addStudent(student2);
+        schule.addStudent(student3);
+
+        System.out.println();
+
+        // ► Alle Studenten ausgeben
+        System.out.println("Studentenliste:");
+        schule.showAllStudents();
+
+        System.out.println();
+
+        System.out.println("Student finden, nach ID:");
+        System.out.println(schule.findStudentById(5));
+
+        System.out.println();
+
+        System.out.println("Vor dem Löschen:");
+        schule.showAllStudents();
+
+        System.out.println();
+
+        System.out.println(schule.deleteStudentById(3));
+
+        System.out.println();
+
+        System.out.println("Nach dem Löschen:");
+        schule.showAllStudents();
     }
 }
+
